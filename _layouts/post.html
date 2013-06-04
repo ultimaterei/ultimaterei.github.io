@@ -1,0 +1,18 @@
+---
+layout: layout
+---
+    <article>
+        <h1>{{ page.title }}</h1>
+        <time>{{ page.date | date: '%A, %d %B %Y' }}</time>
+        {{ content }}
+    </article>
+    <div id="page-navigation">
+        <ul>{% if page.previous.url %}
+        <li id="next"><span class="bl">Previous:</span> 
+            <a href="{{ page.previous.url }}" title=" {{page.previous.title}}">{{page.previous.title|safe}}</a>
+        </li>{%endif%}{% if page.next.url%}
+        <li id="prev"><span class="bl">Next:</span> 
+            <a href="{{ page.next.url }}" title=" {{page.next.title}}">{{page.next.title|safe}}</a>
+            </li>{%endif%}
+        </ul>
+    </div>

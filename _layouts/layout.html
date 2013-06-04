@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <title>{{page.title}} - ultimatereiguide.com</title>
+    <meta name="description" content="{{page.desc}}">
+    <meta name="author" content="Nathan Scott">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--[if IE]>
+    <script src="{{MEDIA_URL}}js/html5css3ie.min.js"></script>
+    <![endif]-->
+    <link rel="alternate" 
+          type="application/rss+xml" 
+          title="ultimatereiguide.com RSS feed"
+          href="/rss/">
+    <link rel="stylesheet" 
+          href="/css/screenv1.css" 
+          media="screen">
+    <link rel="stylesheet" 
+          href="{{MEDIA_URL}}css/ie.css" 
+          media="screen">
+    <![endif]-->
+   </head>
+<body>
+    <header>
+        <h1><a href="/">ultimatereiguide.com</a></h1>
+    </header>
+    <nav role="navigation">
+        <ul>
+            <li><a href="/" title="ultimatereiguide.com homepage">Home</a></li>
+            <li><a href="/archives/" title="ultimatereiguide.com archives">Archives</a></li>
+            <li><a href="/about/" title="Get the backstory on Nathan Scott and the Ultimate REI Guide">About</a></li>
+            <li><a href="/rss/" title="ultimatereiguide.com RSS feed">RSS Feed</a></li>
+        </ul>
+    </nav>
+    <div role="main">
+        {{ content }}
+    <footer>
+        <div>
+            <p class="smprint">&copy;2013 Nathan Scott. Made with &hearts; in Athens, GA.</p>
+            <p class="smprint lst">follow <a href="http://twitter.com/luxagraf" title="follow @luxagraf on twitter">@luxagraf</a></p>
+        </div>
+    </footer>
+
+    </div>
+</body>
+</html>

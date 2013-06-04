@@ -1,0 +1,62 @@
+---
+layout: layout
+desc: The Ultimate Real Estate Investor's Guide to Wholesaling: Work Smarter, Not Harder. Tips, tricks and hints to get you started on the road to real estate riches.
+title: The Ultimate Real Estate Investor's Guide to Wholesaling Property
+---
+
+{% for post in paginator.posts %}
+<article class="arc">
+    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+    <time>{{ post.date | date: '%A, %d %B %Y' }}</time>
+    {{ post.content }}
+</article>{% endfor %}
+
+
+
+
+<div id="post-pagination" class="pagination">
+  {% if paginator.previous_page %}
+  <span class="previous">
+    {% if paginator.previous_page == 1 %}
+    <a href="/">&larr; prev</a>
+    {% else %}
+    <a href="/page{{paginator.previous_page}}">Previous</a>
+    {% endif %}
+  </span>
+  {% else %}
+  <span class="previous disabled">
+    &larr; prev
+  </span>
+  {% endif %}
+
+  <ul class="pages">
+    <li class="page">
+      {% if paginator.page == 1 %}
+      <span class="current-page">1</span>
+      {% else %}
+      <a href="/">1</a>
+      {% endif %}
+    </li>
+
+    {% for count in (2..paginator.total_pages) %}
+    <li class="page">
+      {% if count == paginator.page %}
+      <span class="current-page">{{count}}</span>
+      {% else %}
+      <a href="/page{{count}}">{{count}}</a>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+
+  {% if paginator.next_page %}
+  <span class="next">
+    <a href="/page{{paginator.next_page}}">next &rarr;</a>
+  </span>
+  {% else %}
+  <span class="next disabled">
+    next &rarr;
+  </span>
+  {% endif %}
+
+</div>

@@ -1,0 +1,48 @@
+---
+layout: layout
+title: Archives
+desc: Your Complete Guide to Getting Started in Real Estate Wholesaling 
+permalink: /archives/index.html
+---
+<h1>Previously, on The Ultimate REI Guide</h1>
+<ul class="archive-list">
+	{% for post in site.posts %}
+		{% if post.next %}		
+				{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+				{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+				{% capture month %}{{ post.date | date: '%B' }}{% endcapture %}
+				{% capture nmonth %}{{ post.next.date | date: '%B' }}{% endcapture %}
+		{% endif %}
+		{% if forloop.first %}				
+    <li><span class="hide">{{ post.date | date: '%Y' }}</span>
+        <ul>
+            <li><a href="#{{ post.date | date: '%Y-%B' }}" class="nolink">{{ post.date | date: '%B %Y' }}</a>							
+			    <ul>			
+                {% else %}
+				{% if year != nyear %}	
+				</ul>
+			</li>						
+		</ul>
+	</li>
+    <li><span class="hide">{{ post.date | date: '%Y' }}</span>
+	    <ul>
+	        <li class="mtop"><a href="#{{ post.date | date: '%Y-%B' }}" class="nolink">{{ post.date | date: '%B %Y' }}</a>							
+			    <ul>		
+				{% elsif month != nmonth %}
+				</ul>
+			</li>						
+			<li class="mtop"><a href="#{{ post.date | date: '%Y-%B' }}" class="nolink">{{ post.date | date: '%B %Y' }}</a>							
+                <ul>												
+                {% endif %}					
+                {% endif %}	
+                    <li class="item"><a href="{{ post.url }}">{{ post.title }}</a> <time>{{ post.date | date: '%d %b %Y' }}</time></li>	
+                   {% if forloop.last %}
+                </ul>
+		    </li>						
+		</ul>
+	</li>
+    {% endif %}		   		   		
+	{% endfor %}														
+</ul>	
+
+

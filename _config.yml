@@ -1,0 +1,8 @@
+auto: true
+pygments: true
+permalink: /:year/:month/:day/:title
+paginate: 8 //the number of post per page
+exclude: ["sass", ".sass-cache", "config.rb", "README.md", "CNAME"]
+markdown: rdiscount
+rdiscount:
+    extensions: [smart]
